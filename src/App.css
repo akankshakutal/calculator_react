@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,11 +17,30 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator-body {
+  width: 400px;
+  height: 100px;
+}
+
+button {
+  font-size: 30px;
+  font-weight: lighter;
+  height: 100px;
+  width: 100px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-weight: lighter;
+}
+
+.result {
+  font-weight: lighter;
+  font-size: 30px;
+  text-align: center;
 }
