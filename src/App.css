@@ -42,5 +42,10 @@ h1 {
 .result {
   font-weight: lighter;
   font-size: 30px;
-  text-align: center;
+}
+
+.clear {
+  margin-left: 300px;
+  width: 100px;
+  height: 50px;
 }

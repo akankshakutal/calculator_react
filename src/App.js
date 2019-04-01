@@ -10,20 +10,44 @@ class App extends Component {
     this.state = {
       result: ""
     };
+    this.reset = this.reset.bind(this);
   }
 
   onClick = button => {
+    if (button === "=") {
+      this.calculate();
+    } else {
+      this.setState({
+        result: this.state.result + button
+      });
+    }
+  };
+
+  calculate = () => {
+    var checkResult = this.state.result;
+    if (this.state.result.includes("--")) {
+      checkResult = this.state.result.replace("--", "+");
+    }
     this.setState({
-      result: this.state.result + button
+      result: eval(checkResult)
+    });
+  };
+
+  reset = () => {
+    this.setState({
+      result: ""
     });
   };
 
   render() {
     return (
       <div className="main">
-        <h1>Simple Calculator</h1>
+        <h1>Sample Calculator</h1>
+        <button className="clear" name="C" onClick={this.reset}>
+          C
+        </button>
         <div className="calculator-body">
-          <ResultComponent className="result" result={this.state.result} />
+          <ResultComponent nent className="result" result={this.state.result} />
           <KeyPadComponent onClick={this.onClick} />
         </div>
       </div>
